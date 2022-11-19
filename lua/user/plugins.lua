@@ -61,7 +61,7 @@ return packer.startup(function(use)
   use "b0o/SchemaStore.nvim"
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
-  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+  use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", as = 'lsp_lines.nvim' }
 
   -- Completion
   use "christianchiarulli/nvim-cmp" -- Completion core

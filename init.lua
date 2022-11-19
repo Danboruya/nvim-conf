@@ -17,4 +17,5 @@ require "user.telescope-file-browser"
 require "user.toggleterm"
 require "user.telescope"
 require "user.whichkey"
+require "user.lsp"
 
