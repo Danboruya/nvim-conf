@@ -139,7 +139,7 @@ nvim_tree.setup {
   --   relativenumber = false,
   -- },
   view = {
-    adaptive_size = true,
+    adaptive_size = false,
     mappings = {
       list = {
         { key = { "l", "<CR>", "o" }, action = "edit" },
