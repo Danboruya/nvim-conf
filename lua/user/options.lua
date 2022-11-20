@@ -1,3 +1,11 @@
+local _shell
+if vim.fn.has "win32" == 1 then
+  _shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
+else
+  _shell = vim.o.shell
+end
+
+
 local options = {
   backup = false,                          -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
@@ -39,7 +47,19 @@ local options = {
   title = true,
   -- colorcolumn = "80",
   -- colorcolumn = "120",
+
+  shell = _shell,
 }
+
+
+if vim.fn.has "win32" == 1 then
+  -- Add options for powershell
+  options["shellcmdflag"] = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+  options["shellredir"] = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+  options["shellpipe"] = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+  options["shellquote"] = ""
+  options["shellxquote"] = ""
+end
 
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
