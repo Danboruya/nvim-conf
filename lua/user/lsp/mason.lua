@@ -150,3 +150,6 @@ end
 -- TODO: add something to installer later
 -- require("lspconfig").motoko.setup {}
 
+require("lspconfig").powershell_es.setup({
+  bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services/"
+})
