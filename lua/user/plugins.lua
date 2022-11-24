@@ -61,7 +61,7 @@ return packer.startup(function(use)
   use "b0o/SchemaStore.nvim"
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
-  use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", as = 'lsp_lines.nvim' }
+  -- use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", as = 'lsp_lines.nvim' }
 
   -- Completion
   use "christianchiarulli/nvim-cmp" -- Completion core
@@ -73,8 +73,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-emoji"
   use "f3fora/cmp-spell"
   use "hrsh7th/cmp-nvim-lua"
-  use "zbirenbaum/copilot-cmp"
-
+  -- use "zbirenbaum/copilot-cmp"
+  
   -- Snipet
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -149,11 +149,14 @@ return packer.startup(function(use)
 
   -- Editting Support
   use "windwp/nvim-autopairs"
-  use "monaqa/dial.nvim"
+  -- use "monaqa/dial.nvim"
   use "nacro90/numb.nvim"
   use "andymass/vim-matchup"
   use "karb94/neoscroll.nvim"
   use "junegunn/vim-slash"
+
+  -- Markdown
+  use { "iamcco/markdown-preview.nvim", run="cd app && npm install", ft="markdown" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
